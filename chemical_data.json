@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "ChemicalName": "Ammonium Persulfate",
         "Vendor": "LG Chem",
         "Density": 3525.92,
@@ -7,10 +8,10 @@
         "Packaging": "Bag",
         "PackSize": "100.00",
         "Unit": "kg",   
-        "Quantity": 6495.18,
-        "id":1
+        "Quantity": 6495.18
     },
     {
+        "id":2,
         "ChemicalName": "Caustic Potash",
         "Vendor": "Formosa",
         "Density": 3172.15,
@@ -18,10 +19,10 @@
         "Packaging": "Bag",
         "PackSize": "100.00",
         "Unit": "kg",
-        "Quantity": 8851.9,
-        "id":2
+        "Quantity": 8851.9
     },
     {
+        "id":3,
         "ChemicalName": "Dimethylaminopropylamino",
         "Vendor": "LG Chem",
         "Density": 8435.37,
@@ -29,10 +30,10 @@
         "Packaging": "Barrel",
         "PackSize": "75.00",
         "Unit": "L",
-        "Quantity": 6164.61,
-        "id":3
+        "Quantity": 6164.61
     },
     {
+        "id":4,
         "ChemicalName": "Mono Ammonium Phosphate",
         "Vendor": "Sinopec",
         "Density": 1597.65,
@@ -40,10 +41,10 @@
         "Packaging": "Bag",
         "PackSize": "105.00",
         "Unit": "kg",
-        "Quantity": 8483.73,
-        "id":4
+        "Quantity": 8483.73
     },
     {
+        "id":5,
         "ChemicalName": "Ferric Nitrate",
         "Vendor": "DowDuPont",
         "Density": 364.04,
@@ -51,10 +52,10 @@
         "Packaging": "Bag",
         "PackSize": "105.00",
         "Unit": "kg",
-        "Quantity": 4554.33,
-        "id":5
+        "Quantity": 4554.33
     },
     {
+        "id":6,
         "ChemicalName": "n-Pentane",
         "Vendor": "Sinopec",
         "Density": 4535.26,
@@ -62,10 +63,10 @@
         "Packaging": "N/A",
         "PackSize": "N/A",
         "Unit": "t",
-        "Quantity": 6772.34,
-        "id":6
+        "Quantity": 6772.34
     },
     {
+        "id":7,
         "ChemicalName": "Glycol Ether PM",
         "Vendor": "LG Chem",
         "Density": 6495.18,
@@ -73,10 +74,10 @@
         "Packaging": "Bag",
         "PackSize": "250.00",
         "Unit": "kg",
-        "Quantity": 9349.54,
-        "id":7
+        "Quantity": 9349.54
     },
     {
+        "id":8,
         "ChemicalName": "Ammonium Persulfate 1",
         "Vendor": "LG Chem",
         "Density": 3525.92,
@@ -84,10 +85,10 @@
         "Packaging": "Bag",
         "PackSize": "100.00",
         "Unit": "kg",
-        "Quantity": 7195.18,
-        "id":8
+        "Quantity": 7195.18
     },
     {
+        "id":9,
         "ChemicalName": "Caustic Potash 1",
         "Vendor": "Formosa",
         "Density": 3172.15,
@@ -95,10 +96,10 @@
         "Packaging": "Bag",
         "PackSize": "100.00",
         "Unit": "kg",
-        "Quantity": 9551.9,
-        "id":9
+        "Quantity": 9551.9
     },
     {
+        "id":10,
         "ChemicalName": "Dimethylaminopropylamino 1",
         "Vendor": "LG Chem",
         "Density": 8435.37,
@@ -106,10 +107,10 @@
         "Packaging": "Barrel",
         "PackSize": "75.00",
         "Unit": "L",
-        "Quantity": 6864.61,
-        "id":10
+        "Quantity": 6864.61
     },
     {
+        "id":11,
         "ChemicalName": "Mono Ammonium Phosphate 1",
         "Vendor": "Sinopec",
         "Density": 1597.65,
@@ -117,10 +118,10 @@
         "Packaging": "Bag",
         "PackSize": "105.00",
         "Unit": "kg",
-        "Quantity": 9183.73,
-        "id":11
+        "Quantity": 9183.73
     },
     {
+        "id":12,
         "ChemicalName": "Ferric Nitrate 1",
         "Vendor": "DowDuPont",
         "Density": 364.04,
@@ -128,10 +129,10 @@
         "Packaging": "Bag",
         "PackSize": "105.00",
         "Unit": "kg",
-        "Quantity": 5254.33,
-        "id":12
+        "Quantity": 5254.33
     },
     {
+        "id":13,
         "ChemicalName": "n-Pentane 1",
         "Vendor": "Sinopec",
         "Density": 4535.26,
@@ -139,10 +140,10 @@
         "Packaging": "N/A",
         "PackSize": "N/A",
         "Unit": "t",
-        "Quantity": 7472.34,
-        "id":13
+        "Quantity": 7472.34
     },
     {
+        "id":14,
         "ChemicalName": "Glycol Ether PM 1",
         "Vendor": "LG Chem",
         "Density": 6495.18,
@@ -150,10 +151,10 @@
         "Packaging": "Bag",
         "PackSize": "250.00 ",
         "Unit": "kg",
-        "Quantity": 10049.54,
-        "id":14
+        "Quantity": 10049.54
     },
     {
+        "id":15,
         "ChemicalName": "Ammonium Persulfate 2",
         "Vendor": "LG Chem",
         "Density": 3525.92,
@@ -161,7 +162,6 @@
         "Packaging": "Bag",
         "PackSize": "100.00",
         "Unit": "kg",
-        "Quantity": 7895.18,
-        "id":15
+        "Quantity": 7895.18
     }
 ]
