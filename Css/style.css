@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Consolas', 'Courier New', monospace; 
+}
+
+/* Font awesome icon css*/
+
+.icons_section i{
+    margin-left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#ascArrow{
+    color: grey;
+}
+
+#descArrow{
+    color: grey;
+}
+
+#successAlertToast{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:1050;
+    width: auto;
+    display: none;
+}
+
+.table {
+    border: 1px solid grey;
+}
+
+.table tr{
+    border: transparent;
+}
+
+.table thead tr:last-child{
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table tbody tr:last-child{
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table>thead {
+    vertical-align: baseline !important;
+}
+
+.table>thead tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+table th:nth-child(3),td:nth-child(3) {
+    border-right: 1px solid #dee2e6;
+}
+
+table td:nth-child(5),td:nth-child(6),td:nth-child(10){
+    border: 1px solid #dee2e6;
+}
+
+
+
+

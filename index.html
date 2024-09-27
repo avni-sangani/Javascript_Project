@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Global CSS File -->
+    <link rel="stylesheet" href="Css/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="Css/font-6/css/all.css">
+
+    <title>Chemical Supplies Data</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row py-2">
+        <div class="col">
+          <h3>Chemical Supplies</h3>
+        </div>
+        <div
+          class="col d-flex justify-content-end align-items-center icons_section">
+
+          <span data-bs-toggle="modal"
+            data-bs-target="#myModal">
+            <i class="fa-solid fa-circle-plus text-primary "></i>
+          </span>
+
+          <span onclick="toggleSorting('ChemicalName')">
+            <i class="fa-solid fa-arrow-up arrow asc" id="ascArrow"></i>
+            <i class="fa-solid fa-arrow-down arrow desc" id="descArrow"></i>
+          </span>
+
+          <span data-bs-toggle="modal"
+            data-bs-target="#deleteModal">
+            <span id="deleteIcon"><i
+                class="fa-solid fa-trash text-danger"></i></span>
+          </span>
+
+          <span onclick="refreshChemicalData()">
+            <i class="fa-solid fa-rotate-left  text-primary "></i>
+          </span>
+
+          <span data-bs-toggle="modal"
+            data-bs-target="#saveModal"> <i
+              class="fa-solid fa-floppy-disk  text-primary "></i>
+          </span>
+
+        </div>
+      </div>
+      
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">Chemical name</th>
+            <th scope="col">Vender</th>
+            <th scope="col">Density <br/> <span class="text-secondary">g/m³</span></th>
+            <th scope="col">Viscosity <br/> <span class="text-secondary"> m²/s</span></th>
+            <th scope="col">Packaging</th>
+            <th scope="col">Pack size</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Quantity</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="chemical-data">
+        </tbody>
+      </table>
+
+      <!-- The Modal For Add/Edit Data -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <form id="chemicalDataForm">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title" id="form-header">Add Chemical Data</h4>
+                <button type="button" class="btn-close" onclick="closeModal()"
+                  data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body For Add Form Data -->
+              <div class="modal-body">
+                <div class="form-group">
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="chemicalName">Chemical name</label>
+                      <input type="text" class="form-control"
+                        id="chemicalName"
+                        name="chemicalName"
+                        placeholder="Chemical name" required>
+
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="vendor">Vendor</label>
+                      <input type="text" pattern="[A-Za-z ]+"
+                        class="form-control"
+                        id="vendor"
+                        name="vendor"
+                        placeholder="Vendor" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <label for="density">Density g/m³</label>
+                      <input type="number" step="0.0001" class="form-control"
+                        id="density"
+                        name="density"
+                        placeholder="Density g/m³" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="viscosity">Viscosity m²/s</label>
+                      <input type="number" step="0.0001" class="form-control"
+                        id="viscosity"
+                        name="viscosity"
+                        placeholder="Viscosity m²/s" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="packaging">Packaging</label>
+                      <input type="text" pattern="[A-Za-z /]+"
+                        class="form-control"
+                        id="packaging"
+                        name="packaging"
+                        placeholder="Packaging" required>
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                      <label for="packsize">Pack size</label>
+                      <input type="text" class="form-control"
+                        id="packsize"
+                        name="packsize"
+                        placeholder="Pack Size" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="Unit">Unit</label>
+                      <input type="text" pattern="[A-Za-z /]+"
+                        class="form-control"
+                        id="unit"
+                        name="unit"
+                        placeholder="Unit" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="quantity">Quantity</label>
+                      <input type="number" step="0.0001" class="form-control"
+                        id="quantity"
+                        name="quantity"
+                        placeholder="Quantity" required>
+                    </div>
+                    <input type="hidden" id="id" name="id">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type="button"
+                  class="btn btn-default btn-outline-secondary"
+                  onclick="closeModal()" value="Cancel">
+                <button type="submit" class="btn btn-success"
+                  id="form-submit-Btn"
+                  onclick="AddChemicalDataIntoGrid()">Add</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- The Modal For Delete Confirmation -->
+      <div class="modal" id="deleteModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" id="form-header">Delete Chemical Data</h4>
+              <button type="button" class="btn-close"
+                data-bs-dismiss="modal"
+                onclick="setDeleteModalDisabled()"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <p class="my-2">Are you sure you want to delete these chemical
+                data?</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button " class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+                onclick="setDeleteModalDisabled()">Cancel</button>
+              <button type="button" class="btn btn-danger"
+                onclick="deleteDataOfChemical()">Delete</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- The Modal For Save Data Confirmation -->
+      <div class="modal" id="saveModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" id="form-header">Save Chemical Data</h4>
+              <button type="button" class="btn-close"
+                data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <p class="my-2">Are you sure you want to download these chemical
+                data?</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button " class="btn btn-outline-secondary"
+                data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-success"
+                onclick="saveChemicalData()">Download</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--Sucess Message Alert-->
+      <div id="successAlertToast" class="alert alert-success " role="alert">
+      </div>
+
+    </div>
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="Bootstrap/js/jquery.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    <!--Link to the JS file For loading json data-->
+    <script src="script.js"></script>
+
+  </body>
+</html>
